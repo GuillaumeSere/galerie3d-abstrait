@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/galerie3d-abstrait/static/css/main.f86fc6b0.css",
+    "main.js": "/galerie3d-abstrait/static/js/main.3b2f6b59.js",
+    "index.html": "/galerie3d-abstrait/index.html",
+    "main.f86fc6b0.css.map": "/galerie3d-abstrait/static/css/main.f86fc6b0.css.map",
+    "main.3b2f6b59.js.map": "/galerie3d-abstrait/static/js/main.3b2f6b59.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f86fc6b0.css",
+    "static/js/main.3b2f6b59.js"
+  ]
+}
