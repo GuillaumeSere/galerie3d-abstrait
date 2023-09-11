@@ -1,25 +1,59 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [degrees, setDegrees] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(1);
+
+    const startRotation = () => {
+        setInterval(() => {
+            setDegrees((prevDegrees) => prevDegrees + 22.5);
+            setCurrentIndex((prevIndex) => (prevIndex % 8)  + 1);
+        }, 3000); // Réglez l'intervalle de rotation ici (2 secondes dans cet exemple)
+    };
+
+    useEffect(() => {
+        startRotation();
+        return () => clearInterval(startRotation);
+    }, []);
+
+    const handlePrevClick = () => {
+        setDegrees((prevDegrees) => prevDegrees + 45);
+        setCurrentIndex((prevIndex) => (prevIndex === 1 ? 8 : prevIndex - 1));
+    };
+
+    const handleNextClick = () => {
+        setDegrees((prevDegrees) => prevDegrees - 45);
+        setCurrentIndex((prevIndex) => (prevIndex % 8) + 1);
+    };
+
+    return (
+        <div className="container">
+            <div
+                className="box"
+                style={{
+                    transform: `perspective(1000px) rotateY(${degrees}deg)`,
+                }}
+            >
+                {Array.from({ length: 8 }).map((_, i) => (
+                    <span
+                        key={i}
+                        style={{ '--i': ((i + currentIndex - 1) % 8) + 1 }}
+                    >
+                        <img
+                            src={`./images/img${((i + currentIndex - 1) % 8) + 1}.png`}
+                            alt="tableau abstrait"
+                        />
+                    </span>
+                ))}
+            </div>
+            <div className="btns">
+                <div className="btn prev" onClick={handlePrevClick}></div>
+                <div className="btn next" onClick={handleNextClick}></div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
