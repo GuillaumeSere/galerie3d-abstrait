@@ -8,7 +8,7 @@ function App() {
 
     const startRotation = () => {
         setInterval(() => {
-            setDegrees((prevDegrees) => prevDegrees + 22.5);
+            setDegrees((prevDegrees) => prevDegrees + 45);
             setCurrentIndex((prevIndex) => (prevIndex % 8)  + 1);
         }, 3000); // Réglez l'intervalle de rotation ici (2 secondes dans cet exemple)
     };
