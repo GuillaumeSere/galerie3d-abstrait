@@ -49,6 +49,10 @@ img {
     user-select: none;
 }
 
+.box span img:hover{
+    transform: scale(1.5);
+}
+
 .btns {
     position: absolute;
     bottom: 100px;
@@ -94,6 +98,8 @@ img {
     border-top: 3px solid #000;
     border-right: 3px solid #000;
 }
+
+
 
 @media (max-width: 950px){
     
