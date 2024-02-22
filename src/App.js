@@ -10,7 +10,7 @@ function App() {
         const imagePromises = Array.from({ length: 8 }).map((_, i) => {
             const img = new Image();
             const index = ((i + currentIndex - 1) % 8) + 1;
-            img.src = `./images/img${index}.png`;
+            img.src = `./images/img${index}.webp`;
             return img;
         });
 
