@@ -21,7 +21,7 @@ function App() {
 
     const startRotation = () => {
         const rotationInterval = setInterval(() => {
-            setDegrees((prevDegrees) => prevDegrees + 45);
+            setDegrees((prevDegrees) => prevDegrees + 40);
             setCurrentIndex((prevIndex) => (prevIndex % 10));
         }, 2000); // Réglez l'intervalle de rotation ici (2 secondes dans cet exemple)
         return rotationInterval;
@@ -34,12 +34,12 @@ function App() {
     }, []);
 
     const handlePrevClick = () => {
-        setDegrees((prevDegrees) => prevDegrees + 45);
+        setDegrees((prevDegrees) => prevDegrees + 40);
         setCurrentIndex((prevIndex) => (prevIndex === 1 ? 10 : prevIndex - 1));
     };
 
     const handleNextClick = () => {
-        setDegrees((prevDegrees) => prevDegrees - 45);
+        setDegrees((prevDegrees) => prevDegrees - 40);
         setCurrentIndex((prevIndex) => (prevIndex % 10) + 1);
     };
 
@@ -54,7 +54,7 @@ function App() {
                 {images.map((img, i) => (
                     <span
                         key={i}
-                        style={{ '--i': ((i + currentIndex - 1) % 10) }}
+                        style={{ '--i': ((i + currentIndex - 1) % 10) + 1 }}
                     >
                         <img src={img.src} alt="tableau abstrait" />
                     </span>
