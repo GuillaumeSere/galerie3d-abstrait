@@ -7,9 +7,9 @@ function App() {
     const [images, setImages] = useState([]);
 
     const preloadImages = () => {
-        const imagePromises = Array.from({ length: 8 }).map((_, i) => {
+        const imagePromises = Array.from({ length: 9 }).map((_, i) => {
             const img = new Image();
-            const index = ((i + currentIndex - 1) % 8) + 1;
+            const index = ((i + currentIndex - 1) % 9) + 1;
             img.src = `./images/img${index}.webp`;
             return img;
         });
@@ -22,7 +22,7 @@ function App() {
     const startRotation = () => {
         const rotationInterval = setInterval(() => {
             setDegrees((prevDegrees) => prevDegrees + 45);
-            setCurrentIndex((prevIndex) => (prevIndex % 8));
+            setCurrentIndex((prevIndex) => (prevIndex % 9));
         }, 2000); // Réglez l'intervalle de rotation ici (2 secondes dans cet exemple)
         return rotationInterval;
     };
@@ -35,12 +35,12 @@ function App() {
 
     const handlePrevClick = () => {
         setDegrees((prevDegrees) => prevDegrees + 45);
-        setCurrentIndex((prevIndex) => (prevIndex === 1 ? 8 : prevIndex - 1));
+        setCurrentIndex((prevIndex) => (prevIndex === 1 ? 9 : prevIndex - 1));
     };
 
     const handleNextClick = () => {
         setDegrees((prevDegrees) => prevDegrees - 45);
-        setCurrentIndex((prevIndex) => (prevIndex % 8) + 1);
+        setCurrentIndex((prevIndex) => (prevIndex % 9) + 1);
     };
 
     return (
@@ -54,7 +54,7 @@ function App() {
                 {images.map((img, i) => (
                     <span
                         key={i}
-                        style={{ '--i': ((i + currentIndex - 1) % 8) + 1 }}
+                        style={{ '--i': ((i + currentIndex - 1) % 9) + 1 }}
                     >
                         <img src={img.src} alt="tableau abstrait" />
                     </span>
