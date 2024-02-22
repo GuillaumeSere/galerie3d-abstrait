@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/galerie3d-abstrait/static/css/main.73e8249f.css",
-    "main.js": "/galerie3d-abstrait/static/js/main.28d52f67.js",
+    "main.js": "/galerie3d-abstrait/static/js/main.ed8c520c.js",
     "index.html": "/galerie3d-abstrait/index.html",
     "main.73e8249f.css.map": "/galerie3d-abstrait/static/css/main.73e8249f.css.map",
-    "main.28d52f67.js.map": "/galerie3d-abstrait/static/js/main.28d52f67.js.map"
+    "main.ed8c520c.js.map": "/galerie3d-abstrait/static/js/main.ed8c520c.js.map"
   },
   "entrypoints": [
     "static/css/main.73e8249f.css",
-    "static/js/main.28d52f67.js"
+    "static/js/main.ed8c520c.js"
   ]
 }
