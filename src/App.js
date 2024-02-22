@@ -54,7 +54,7 @@ function App() {
                 {images.map((img, i) => (
                     <span
                         key={i}
-                        style={{ '--i': ((i + currentIndex - 1) % 10) + 1 }}
+                        style={{ '--i': ((i + currentIndex - 1) % 10) + 2 }}
                     >
                         <img src={img.src} alt="tableau abstrait" />
                     </span>
